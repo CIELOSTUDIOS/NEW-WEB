@@ -7,6 +7,7 @@
   <title>Cielo Studios | Marketing, handled.</title>
   <meta name="description" content="Anything marketing? That's us. Cielo Studios helps businesses get seen through social media, film, ads, websites, SEO, merchandise, print and more.">
   <meta name="theme-color" content="#1e120a">
+
   <link rel="icon" type="image/png" href="images/logo-camera.png">
   <link rel="apple-touch-icon" href="images/logo-camera.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,9 +27,7 @@
       --sans:'Manrope',system-ui,-apple-system,sans-serif;
     }
 
-    *,*::before,*::after {
-      box-sizing:border-box;
-    }
+    *,*::before,*::after { box-sizing:border-box; }
 
     html {
       scroll-behavior:smooth;
@@ -44,14 +43,9 @@
       -webkit-font-smoothing:antialiased;
     }
 
-    img,video {
-      max-width:100%;
-      display:block;
-    }
-
-    a {color:inherit}
-
-    h1,h2,h3,p {margin:0}
+    img,video { max-width:100%; display:block; }
+    a { color:inherit; }
+    h1,h2,h3,p { margin:0; }
 
     .wrap {
       width:min(100% - 2.5rem,74rem);
@@ -81,17 +75,17 @@
       text-decoration:none;
       border:1px solid transparent;
       cursor:pointer;
-      transition:transform .2s,background .2s,color .2s,border-color .2s;
+      transition:transform .2s,background .2s,color .2s;
     }
 
-    .btn:hover {transform:translateY(-2px)}
+    .btn:hover { transform:translateY(-2px); }
 
     .btn-light {
       background:var(--cream);
       color:var(--ink);
     }
 
-    .btn-light:hover {background:var(--caramel)}
+    .btn-light:hover { background:var(--caramel); }
 
     .btn-line {
       border-color:rgba(244,233,219,.5);
@@ -102,13 +96,6 @@
       border-color:var(--cream);
       background:rgba(244,233,219,.08);
     }
-
-    .btn-dark {
-      background:var(--espresso);
-      color:var(--cream);
-    }
-
-    .btn-dark:hover {background:var(--caramel-deep)}
 
     .eyebrow {
       font-size:.72rem;
@@ -121,6 +108,8 @@
     .section-heading {
       font-size:clamp(2.6rem,5vw,4.2rem);
     }
+
+    section { padding:6rem 0; }
 
     /* HEADER */
 
@@ -159,9 +148,7 @@
       font-weight:700;
     }
 
-    .site-header nav a:not(.btn):hover {
-      color:var(--caramel);
-    }
+    .site-header nav a:not(.btn):hover { color:var(--caramel); }
 
     .site-header .btn {
       padding:.65rem 1.15rem;
@@ -236,11 +223,9 @@
     }
 
     @keyframes rise {
-      from {opacity:0;transform:translateY(18px)}
-      to {opacity:1;transform:none}
+      from { opacity:0; transform:translateY(18px); }
+      to { opacity:1; transform:none; }
     }
-
-    section {padding:6rem 0}
 
     /* OUR WORK */
 
@@ -257,9 +242,7 @@
       margin-bottom:2.3rem;
     }
 
-    .work-head .section-heading {
-      margin-top:.5rem;
-    }
+    .work-head .section-heading { margin-top:.5rem; }
 
     .work-head p {
       max-width:24rem;
@@ -269,9 +252,8 @@
 
     .work-grid {
       display:grid;
-      grid-template-columns:.8fr 1.1fr 1.1fr;
-      align-items:center;
-      gap:1.25rem;
+      grid-template-columns:1.35fr 1fr 1fr;
+      gap:1rem;
     }
 
     .work-card {
@@ -279,18 +261,22 @@
       overflow:hidden;
       border-radius:1rem;
       background:#3a281b;
+      min-height:19rem;
       aspect-ratio:4/5;
       isolation:isolate;
     }
 
-    .work-card.creative-ad {
+    .work-card.featured {
       aspect-ratio:9/16;
+      min-height:31rem;
     }
 
     .work-card img,
     .work-card video {
       width:100%;
       height:100%;
+      position:absolute;
+      inset:0;
       object-fit:cover;
       transition:transform .5s;
     }
@@ -304,8 +290,9 @@
       content:"";
       position:absolute;
       inset:45% 0 0;
-      background:linear-gradient(transparent,rgba(15,8,4,.82));
+      background:linear-gradient(transparent,rgba(15,8,4,.76));
       pointer-events:none;
+      z-index:1;
     }
 
     .work-card .work-label {
@@ -333,33 +320,81 @@
       color:rgba(244,233,219,.75);
     }
 
-    .work-placeholder {
-      width:100%;
-      height:100%;
-      display:grid;
-      place-items:center;
-      text-align:center;
-      padding:1.5rem;
-      background:radial-gradient(circle at 50% 35%,#62452d,#2d1d12 70%);
+    /* CONTACT */
+
+    .contact {
+      background:var(--brown);
+      color:var(--cream);
     }
 
-    .work-placeholder span {
-      font-family:var(--display);
-      font-size:1.6rem;
-      color:rgba(244,233,219,.75);
+    .contact-head {
+      max-width:42rem;
+      margin-bottom:2.5rem;
     }
+
+    .contact-head h2 { margin:.55rem 0 1rem; }
+
+    .contact-head p {
+      color:rgba(244,233,219,.78);
+      font-size:1.05rem;
+    }
+
+    .contact-options {
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:1rem;
+    }
+
+    .contact-card {
+      padding:2.2rem;
+      border:1px solid rgba(244,233,219,.2);
+      border-radius:1.2rem;
+      background:rgba(30,18,10,.22);
+      min-height:15rem;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+    }
+
+    .contact-card .symbol {
+      font-size:1.7rem;
+      color:var(--caramel);
+      margin-bottom:1.3rem;
+    }
+
+    .contact-card h3 {
+      font-family:var(--display);
+      font-size:2rem;
+      font-weight:400;
+      margin-bottom:.5rem;
+    }
+
+    .contact-card p {
+      color:rgba(244,233,219,.72);
+      margin-bottom:1.5rem;
+      max-width:27rem;
+    }
+
+    .contact-card .btn { margin-top:auto; }
 
     /* ABOUT */
 
+    .about {
+      padding:4.5rem 0;
+      background:var(--cream);
+    }
+
     .about .split {
       display:grid;
-      gap:4rem;
-      grid-template-columns:2fr 3fr;
+      gap:3.5rem;
+      grid-template-columns:minmax(260px, .85fr) 1.4fr;
       align-items:center;
     }
 
     .about .photo {
       position:relative;
+      width:100%;
+      max-width:390px;
       border-radius:1.25rem;
       overflow:hidden;
       background:var(--espresso);
@@ -368,14 +403,16 @@
 
     .about .photo img {
       width:100%;
-      aspect-ratio:4/5;
+      aspect-ratio:1/1;
+      max-height:390px;
       object-fit:cover;
+      object-position:center 35%;
     }
 
     .about .photo figcaption {
       position:absolute;
       inset:auto 0 0;
-      padding:4rem 1.5rem 1.4rem;
+      padding:3rem 1.5rem 1.2rem;
       background:linear-gradient(0deg,rgba(30,18,10,.9),transparent);
       color:var(--cream);
     }
@@ -388,19 +425,12 @@
       line-height:1.1;
     }
 
-    .about .photo span {
-      font-size:.9rem;
-      opacity:.8;
-    }
-
-    .about h2 {
-      margin:.55rem 0 1.5rem;
-    }
+    .about h2 { margin:.55rem 0 1.2rem; }
 
     .about .copy p {
-      font-size:1.05rem;
+      font-size:1rem;
       color:rgba(43,26,14,.8);
-      margin-bottom:1rem;
+      margin-bottom:.85rem;
       max-width:38rem;
     }
 
@@ -449,13 +479,9 @@
 
     /* FAQ */
 
-    .faq {
-      background:var(--sand);
-    }
+    .faq { background:var(--sand); }
 
-    .faq h2 {
-      margin-bottom:2rem;
-    }
+    .faq h2 { margin-bottom:2rem; }
 
     .faq details {
       border-top:1px solid rgba(43,26,14,.25);
@@ -477,9 +503,7 @@
       gap:1rem;
     }
 
-    .faq summary::-webkit-details-marker {
-      display:none;
-    }
+    .faq summary::-webkit-details-marker { display:none; }
 
     .faq summary::after {
       content:"+";
@@ -488,75 +512,12 @@
       color:var(--caramel-deep);
     }
 
-    .faq details[open] summary::after {
-      content:"−";
-    }
+    .faq details[open] summary::after { content:"−"; }
 
     .faq details p {
       margin-top:.7rem;
       color:rgba(43,26,14,.76);
       max-width:45rem;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      background:var(--brown);
-      color:var(--cream);
-    }
-
-    .contact-head {
-      max-width:42rem;
-      margin-bottom:2.5rem;
-    }
-
-    .contact-head h2 {
-      margin:.55rem 0 1rem;
-    }
-
-    .contact-head p {
-      color:rgba(244,233,219,.78);
-      font-size:1.05rem;
-    }
-
-    .contact-options {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:1rem;
-    }
-
-    .contact-card {
-      padding:2.2rem;
-      border:1px solid rgba(244,233,219,.2);
-      border-radius:1.2rem;
-      background:rgba(30,18,10,.22);
-      min-height:15rem;
-      display:flex;
-      flex-direction:column;
-      align-items:flex-start;
-    }
-
-    .contact-card .symbol {
-      font-size:1.7rem;
-      color:var(--caramel);
-      margin-bottom:1.3rem;
-    }
-
-    .contact-card h3 {
-      font-family:var(--display);
-      font-size:2rem;
-      font-weight:400;
-      margin-bottom:.5rem;
-    }
-
-    .contact-card p {
-      color:rgba(244,233,219,.72);
-      margin-bottom:1.5rem;
-      max-width:27rem;
-    }
-
-    .contact-card .btn {
-      margin-top:auto;
     }
 
     /* FOOTER */
@@ -565,6 +526,7 @@
       background:var(--espresso);
       color:rgba(244,233,219,.62);
       padding:2.5rem 0;
+      border-top:1px solid rgba(244,233,219,.12);
     }
 
     footer .wrap {
@@ -580,8 +542,6 @@
       max-height:3.5rem;
     }
 
-    /* STICKY CONTACT BUTTON */
-
     .sticky {
       position:fixed;
       left:1rem;
@@ -594,12 +554,12 @@
       transition:transform .3s;
     }
 
-    .sticky.show {transform:none}
+    .sticky.show { transform:none; }
 
     /* TABLET */
 
     @media(max-width:800px) {
-      section {padding:4.5rem 0}
+      section { padding:4.5rem 0; }
 
       .site-header nav {
         display:none;
@@ -616,72 +576,53 @@
         gap:0;
       }
 
-      .site-header nav.open {display:flex}
+      .site-header nav.open { display:flex; }
 
       .site-header nav a:not(.btn) {
         display:block;
         padding:.8rem .5rem;
       }
 
-      .site-header nav .btn {margin-top:.5rem}
+      .site-header nav .btn { margin-top:.5rem; }
+      .menu-toggle { display:block; }
+      .hero { min-height:38rem; }
 
-      .menu-toggle {display:block}
-
-      .hero {min-height:38rem}
-
-      .work-head {display:block}
-
-      .work-head p {margin-top:1rem}
+      .work-head { display:block; }
+      .work-head p { margin-top:1rem; }
 
       .work-grid {
-        grid-template-columns:.8fr 1fr 1fr;
-        gap:.8rem;
+        grid-template-columns:1fr 1fr;
       }
 
-      .work-card .work-label {
-        left:.8rem;
-        right:.8rem;
-        bottom:.8rem;
-        display:block;
+      .work-card.featured {
+        grid-column:span 2;
+        aspect-ratio:9/16;
+        min-height:0;
+        max-height:38rem;
       }
 
-      .work-label strong {
-        display:block;
-        font-size:1.35rem;
-      }
-
-      .work-label span {
-        display:block;
-        margin-top:.2rem;
-      }
-
-      .services ul {column-gap:2rem}
+      .work-card { min-height:16rem; }
 
       .about .split {
-        grid-template-columns:1fr;
-        gap:2.5rem;
+        grid-template-columns:1fr 1.2fr;
+        gap:2rem;
       }
 
-      .about .photo {max-width:28rem}
-
-      .sticky {display:inline-flex}
+      .about .photo { max-width:100%; }
+      .sticky { display:inline-flex; }
     }
 
     /* MOBILE */
 
     @media(max-width:560px) {
-      .wrap {
-        width:min(100% - 2rem,74rem);
-      }
+      .wrap { width:min(100% - 2rem,74rem); }
 
       .hero .wrap {
         padding-top:8.5rem;
         padding-bottom:4.5rem;
       }
 
-      .hero h1 {
-        font-size:clamp(3.6rem,16vw,5.5rem);
-      }
+      .hero h1 { font-size:clamp(3.6rem,16vw,5.5rem); }
 
       .work-grid,
       .services ul,
@@ -689,35 +630,27 @@
         grid-template-columns:1fr;
       }
 
-      .work-grid {gap:1rem}
-
-      .work-card {
-        width:100%;
-        max-width:25rem;
-        margin-inline:auto;
-      }
-
-      .work-card.creative-ad {
+      .work-card.featured {
+        grid-column:auto;
         aspect-ratio:9/16;
-        max-width:20rem;
+        max-height:34rem;
       }
 
-      .work-card:not(.creative-ad) {
-        aspect-ratio:4/5;
+      .work-card { min-height:17rem; }
+
+      .about .split {
+        grid-template-columns:1fr;
+        gap:2rem;
       }
 
-      .work-card .work-label {
-        left:1.2rem;
-        right:1.2rem;
-        bottom:1rem;
+      .about .photo {
+        max-width:100%;
+        width:100%;
       }
 
-      .work-label strong {
-        font-size:1.55rem;
-      }
-
-      .services li:last-child {
-        border-bottom:0;
+      .about .photo img {
+        aspect-ratio:1/1;
+        max-height:360px;
       }
 
       .contact-card {
@@ -755,9 +688,9 @@
 
     <nav id="main-nav" aria-label="Main navigation">
       <a href="#work">Our work</a>
+      <a href="#contact">Contact</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
       <a class="btn btn-light" href="#contact">Let's talk</a>
     </nav>
   </div>
@@ -766,7 +699,6 @@
 <main id="top">
 
   <!-- HERO -->
-
   <section class="hero" aria-labelledby="hero-title">
     <div class="wrap">
       <p class="eyebrow">Cielo Studios · Belize</p>
@@ -788,10 +720,8 @@
   </section>
 
   <!-- OUR WORK -->
-
   <section class="work" id="work" aria-labelledby="work-title">
     <div class="wrap">
-
       <div class="work-head">
         <div>
           <p class="eyebrow">A look at what we do</p>
@@ -806,27 +736,26 @@
 
       <div class="work-grid">
 
-        <!-- CREATIVE AD: 9:16 portrait.
-             Replace this placeholder with your own image or video. -->
-
-        <article class="work-card creative-ad">
-          <div class="work-placeholder">
-            <span>Creative Ad</span>
-          </div>
+        <!-- CREATIVE AD VIDEO -->
+        <article class="work-card featured">
+          <video controls playsinline preload="metadata">
+            <source src="work/creative-ad.mp4" type="video/mp4">
+            Your browser does not support this video.
+          </video>
 
           <div class="work-label">
             <strong>Creative Ad</strong>
-            <span>Advertising</span>
+            <span>Video</span>
           </div>
         </article>
 
-        <!-- BRANDING / WEBSITE: 4:5 portrait.
-             Replace this placeholder with your own image or video. -->
-
+        <!-- BRANDING / WEBSITE IMAGE -->
         <article class="work-card">
-          <div class="work-placeholder">
-            <span>Branding / Website</span>
-          </div>
+          <img
+            src="work/branding-website.jpg"
+            alt="Cielo Studios branding and website project"
+            loading="lazy"
+          >
 
           <div class="work-label">
             <strong>Branding / Website</strong>
@@ -834,13 +763,12 @@
           </div>
         </article>
 
-        <!-- SOCIAL MEDIA: 4:5 portrait.
-             Replace this placeholder with your own image or video. -->
-
+        <!-- SOCIAL MEDIA VIDEO -->
         <article class="work-card">
-          <div class="work-placeholder">
-            <span>Social Media</span>
-          </div>
+          <video controls playsinline preload="metadata">
+            <source src="work/social-media.mp4" type="video/mp4">
+            Your browser does not support this video.
+          </video>
 
           <div class="work-label">
             <strong>Social Media</strong>
@@ -852,8 +780,65 @@
     </div>
   </section>
 
-  <!-- ABOUT -->
+  <!-- CONTACT -->
+  <section class="contact" id="contact" aria-labelledby="contact-title">
+    <div class="wrap">
+      <div class="contact-head">
+        <p class="eyebrow">Let's make something happen</p>
 
+        <h2 id="contact-title" class="display section-heading">
+          Let's grow your business.
+        </h2>
+
+        <p>
+          Have a project in mind or need a hand with your marketing?
+          Choose the easiest way to reach us.
+        </p>
+      </div>
+
+      <div class="contact-options">
+
+        <article class="contact-card">
+          <div class="symbol" aria-hidden="true">✉</div>
+          <h3>Email us</h3>
+
+          <p>
+            Send us a few details about your business or project.
+            We'll take it from there.
+          </p>
+
+          <a
+            class="btn btn-light"
+            href="mailto:cielostudios@outlook.com?subject=Cielo%20Studios%20-%20Project%20Inquiry"
+          >
+            Start an email
+          </a>
+        </article>
+
+        <article class="contact-card">
+          <div class="symbol" aria-hidden="true">↗</div>
+          <h3>Chat on WhatsApp</h3>
+
+          <p>
+            Prefer a quick conversation?
+            Message us directly on WhatsApp.
+          </p>
+
+          <a
+            class="btn btn-light"
+            href="https://wa.me/12133093160"
+            target="_blank"
+            rel="noopener"
+          >
+            Message on WhatsApp
+          </a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
   <section class="about" id="about" aria-labelledby="about-title">
     <div class="wrap split">
 
@@ -862,13 +847,12 @@
           src="images/founder.jpg"
           alt="Abraham Heavener, founder of Cielo Studios"
           width="1000"
-          height="1250"
+          height="1000"
           loading="lazy"
         >
 
         <figcaption>
-          <b>Abraham Heavener</b>
-          <span>Founder &amp; Creative Director</span>
+          <b>Founder</b>
         </figcaption>
       </figure>
 
@@ -880,33 +864,31 @@
         </h2>
 
         <p>
-          I'm Abraham Heavener, founder and creative director of
-          Cielo Studios. I've always been drawn to building things:
-          solving a problem, putting a plan into motion, or bringing
-          an idea to life through film and design.
+          I'm Abraham Heavener, founder and creative director of Cielo Studios.
+          I've always been drawn to building things: solving a problem,
+          putting a plan into motion, or bringing an idea to life through
+          film and design.
         </p>
 
         <p>
-          I started Cielo Studios to carry on my father's work in
-          filmmaking. That same commitment to craft and creativity
-          shapes how we approach every project and every brand we work with.
+          I started Cielo Studios to carry on my father's work in filmmaking.
+          That same commitment to craft and creativity shapes how we approach
+          every project and every brand we work with.
         </p>
 
         <p>
-          Cielo means “heaven” in Spanish. For us, it's a name that
-          represents ambition, creativity, and the standard we strive
-          to bring to every client.
+          Cielo means “heaven” in Spanish. For us, it's a name that represents
+          ambition, creativity, and the standard we strive to bring to
+          every client.
         </p>
       </div>
 
     </div>
   </section>
 
-  <!-- SERVICES -->
-
+  <!-- SERVICES - ABOVE FAQ -->
   <section class="services" id="services" aria-labelledby="services-title">
     <div class="wrap">
-
       <p class="eyebrow">What we bring to the table</p>
 
       <h2 id="services-title" class="display section-heading">
@@ -917,8 +899,8 @@
         <li>
           <h3>Social Media Creation &amp; Management</h3>
           <p>
-            Content created and managed for you, from planning and
-            posting to community engagement and growth.
+            Content created and managed for you, from planning and posting
+            to community engagement and growth.
           </p>
         </li>
 
@@ -970,15 +952,12 @@
           </p>
         </li>
       </ul>
-
     </div>
   </section>
 
-  <!-- FAQ -->
-
+  <!-- FAQ - NOW BELOW SERVICES -->
   <section class="faq" aria-labelledby="faq-title">
     <div class="wrap">
-
       <p class="eyebrow">A few things you might be wondering</p>
 
       <h2 id="faq-title" class="display section-heading">
@@ -998,8 +977,8 @@
         <summary>What does it cost?</summary>
         <p>
           It depends on what you need. After your consultation,
-          we'll send a clear plan with pricing, so you know
-          exactly what's included.
+          we'll send a clear plan with pricing, so you know exactly
+          what's included.
         </p>
       </details>
 
@@ -1019,90 +998,16 @@
           discuss your goals, and arrange a free consultation.
         </p>
       </details>
-
-    </div>
-  </section>
-
-  <!-- CONTACT -->
-
-  <section class="contact" id="contact" aria-labelledby="contact-title">
-    <div class="wrap">
-
-      <div class="contact-head">
-        <p class="eyebrow">Let's make something happen</p>
-
-        <h2 id="contact-title" class="display section-heading">
-          Let's grow your business.
-        </h2>
-
-        <p>
-          Have a project in mind or need a hand with your marketing?
-          Choose the easiest way to reach us.
-        </p>
-      </div>
-
-      <div class="contact-options">
-
-        <article class="contact-card">
-          <div class="symbol" aria-hidden="true">✉</div>
-
-          <h3>Email us</h3>
-
-          <p>
-            Send us a few details about your business or project.
-            We'll take it from there.
-          </p>
-
-          <a
-            class="btn btn-light"
-            href="mailto:cielostudios@outlook.com?subject=Cielo%20Studios%20-%20Project%20Inquiry"
-          >
-            Start an email
-          </a>
-        </article>
-
-        <article class="contact-card">
-          <div class="symbol" aria-hidden="true">↗</div>
-
-          <h3>Chat on WhatsApp</h3>
-
-          <p>
-            Prefer a quick conversation?
-            Message us directly on WhatsApp.
-          </p>
-
-          <!-- Replace 501XXXXXXXX with your actual WhatsApp number. -->
-          <a
-            class="btn btn-light"
-            href="https://wa.me/12133093160"
-            target="_blank"
-            rel="noopener"
-          >
-            Message on WhatsApp
-          </a>
-        </article>
-
-      </div>
     </div>
   </section>
 
 </main>
 
 <!-- FOOTER -->
-
 <footer>
   <div class="wrap">
-
-    <img
-      class="brand-logo"
-      src="images/logo-camera.png"
-      alt="Cielo Studios"
-    >
-
-    <p>
-      © <span id="year"></span> Cielo Studios. All rights reserved.
-    </p>
-
+    <img class="brand-logo" src="images/logo-camera.png" alt="Cielo Studios">
+    <p>© <span id="year"></span> Cielo Studios. All rights reserved.</p>
   </div>
 </footer>
 
@@ -1111,40 +1016,36 @@
 </a>
 
 <script>
-  document.getElementById('year').textContent =
-    new Date().getFullYear();
+  document.getElementById('year').textContent = new Date().getFullYear();
 
   const menuButton = document.querySelector('.menu-toggle');
   const nav = document.getElementById('main-nav');
 
   menuButton.addEventListener('click', () => {
     const open = nav.classList.toggle('open');
-
     menuButton.setAttribute('aria-expanded', String(open));
   });
 
-  nav.querySelectorAll('a').forEach(link =>
+  nav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
       nav.classList.remove('open');
       menuButton.setAttribute('aria-expanded', 'false');
-    })
-  );
+    });
+  });
 
   const sticky = document.getElementById('sticky');
   const hero = document.querySelector('.hero');
   const contact = document.getElementById('contact');
 
   if ('IntersectionObserver' in window) {
-    const visibility = {
-      hero:true,
-      contact:false
-    };
+    const visibility = {hero:true, contact:false};
 
-    const updateSticky = () =>
+    const updateSticky = () => {
       sticky.classList.toggle(
         'show',
         !visibility.hero && !visibility.contact
       );
+    };
 
     new IntersectionObserver(entries => {
       visibility.hero = entries[0].isIntersecting;
@@ -1160,4 +1061,3 @@
 
 </body>
 </html>
-
