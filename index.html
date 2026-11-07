@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -250,9 +249,10 @@
       font-size:.96rem;
     }
 
+    /* three equal cards, same height */
     .work-grid {
       display:grid;
-      grid-template-columns:1.35fr 1fr 1fr;
+      grid-template-columns:repeat(3,1fr);
       gap:1rem;
     }
 
@@ -261,14 +261,8 @@
       overflow:hidden;
       border-radius:1rem;
       background:#3a281b;
-      min-height:19rem;
       aspect-ratio:4/5;
       isolation:isolate;
-    }
-
-    .work-card.featured {
-      aspect-ratio:9/16;
-      min-height:31rem;
     }
 
     .work-card img,
@@ -278,8 +272,11 @@
       position:absolute;
       inset:0;
       object-fit:cover;
+      object-position:center 30%;
       transition:transform .5s;
     }
+
+    .work-card img { object-position:center; }
 
     .work-card:hover img,
     .work-card:hover video {
@@ -305,7 +302,13 @@
       align-items:end;
       justify-content:space-between;
       gap:1rem;
+      pointer-events:none;
+      transition:opacity .25s;
     }
+
+    /* hide caption while a video plays so it never covers the controls */
+    .work-card.playing .work-label,
+    .work-card.playing::after { opacity:0; }
 
     .work-label strong {
       font-family:var(--display);
@@ -556,6 +559,16 @@
 
     .sticky.show { transform:none; }
 
+    /* SMALL LAPTOP / TABLET: work cards stack, one per row, same size */
+
+    @media(max-width:860px) {
+      .work-grid {
+        grid-template-columns:1fr;
+        max-width:26rem;
+        margin-inline:auto;
+      }
+    }
+
     /* TABLET */
 
     @media(max-width:800px) {
@@ -590,19 +603,6 @@
       .work-head { display:block; }
       .work-head p { margin-top:1rem; }
 
-      .work-grid {
-        grid-template-columns:1fr 1fr;
-      }
-
-      .work-card.featured {
-        grid-column:span 2;
-        aspect-ratio:9/16;
-        min-height:0;
-        max-height:38rem;
-      }
-
-      .work-card { min-height:16rem; }
-
       .about .split {
         grid-template-columns:1fr 1.2fr;
         gap:2rem;
@@ -624,19 +624,10 @@
 
       .hero h1 { font-size:clamp(3.6rem,16vw,5.5rem); }
 
-      .work-grid,
       .services ul,
       .contact-options {
         grid-template-columns:1fr;
       }
-
-      .work-card.featured {
-        grid-column:auto;
-        aspect-ratio:9/16;
-        max-height:34rem;
-      }
-
-      .work-card { min-height:17rem; }
 
       .about .split {
         grid-template-columns:1fr;
@@ -737,8 +728,8 @@
       <div class="work-grid">
 
         <!-- CREATIVE AD VIDEO -->
-        <article class="work-card featured">
-          <video controls playsinline preload="metadata">
+        <article class="work-card">
+          <video controls playsinline preload="metadata" poster="work/creative-ad-cover.jpg">
             <source src="work/creative-ad.mp4" type="video/mp4">
             Your browser does not support this video.
           </video>
@@ -749,23 +740,23 @@
           </div>
         </article>
 
-        <!-- BRANDING / WEBSITE IMAGE -->
+        <!-- PAID ADS / WEBSITE IMAGE -->
         <article class="work-card">
           <img
-            src="work/branding-website.jpg"
-            alt="Cielo Studios branding and website project"
+            src="work/paid-ads-website.jpg"
+            alt="Cielo Studios paid ads and website project"
             loading="lazy"
           >
 
           <div class="work-label">
-            <strong>Branding / Website</strong>
+            <strong>Paid Ads / Website</strong>
             <span>Design</span>
           </div>
         </article>
 
         <!-- SOCIAL MEDIA VIDEO -->
         <article class="work-card">
-          <video controls playsinline preload="metadata">
+          <video controls playsinline preload="metadata" poster="work/social-media-cover.jpg">
             <source src="work/social-media.mp4" type="video/mp4">
             Your browser does not support this video.
           </video>
@@ -1031,6 +1022,15 @@
       nav.classList.remove('open');
       menuButton.setAttribute('aria-expanded', 'false');
     });
+  });
+
+  // Hide the caption while a work video is playing
+  document.querySelectorAll('.work-card video').forEach(video => {
+    const card = video.closest('.work-card');
+    video.addEventListener('play', () => card.classList.add('playing'));
+    ['pause', 'ended'].forEach(evt =>
+      video.addEventListener(evt, () => card.classList.remove('playing'))
+    );
   });
 
   const sticky = document.getElementById('sticky');
