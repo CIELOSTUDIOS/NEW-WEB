@@ -264,15 +264,14 @@
 
     /* HERO MOTION GRAPHIC */
 
-    .hero .wrap > *:not(.hero-visual) { position:relative; z-index:1; }
+    .hero .wrap { z-index:1; }
 
     .hero-visual {
       position:absolute;
-      right:2%;
-      top:50%;
+      right:max(1rem,calc((100% - 74rem) / 2));
+      bottom:-1.5rem;
       width:min(34%,24rem);
       aspect-ratio:520/772;
-      transform:translateY(-46%);
       container-type:inline-size;
       pointer-events:none;
       z-index:0;
@@ -280,10 +279,10 @@
 
     .hv-glow {
       position:absolute;
-      left:-25%;
-      right:-25%;
-      top:8%;
-      bottom:8%;
+      left:-30%;
+      right:-30%;
+      top:-38%;
+      bottom:4%;
       border-radius:50%;
       background:radial-gradient(closest-side,rgba(217,160,102,.34),transparent);
       animation:hvPulse 5s ease-in-out infinite;
@@ -397,6 +396,61 @@
       background:var(--espresso);
       color:var(--caramel);
     }
+
+    /* tagline above the phone */
+    .hv-tagline {
+      position:absolute;
+      right:2%;
+      bottom:calc(100% + 1.2rem);
+      text-align:right;
+    }
+
+    .hv-tagline .kicker {
+      display:block;
+      margin-bottom:.9rem;
+      font:800 .7rem var(--sans);
+      letter-spacing:.2em;
+      text-transform:uppercase;
+      color:var(--caramel);
+      animation:hvRise .8s ease .2s both;
+    }
+
+    .hv-tagline .kicker::after {
+      content:"";
+      display:block;
+      width:3.2rem;
+      height:2px;
+      margin:.7rem 0 0 auto;
+      background:linear-gradient(90deg,transparent,var(--caramel));
+    }
+
+    .hv-tagline .ln {
+      display:block;
+      font-family:var(--display);
+      font-weight:400;
+      font-size:3.4rem;
+      font-size:15cqw;
+      line-height:1.02;
+      letter-spacing:-.02em;
+      background:linear-gradient(100deg,var(--cream) 20%,var(--caramel));
+      -webkit-background-clip:text;
+      background-clip:text;
+      -webkit-text-fill-color:transparent;
+      color:transparent;
+      animation:hvRise .8s ease both;
+    }
+
+    .hv-tagline .ln:nth-of-type(1) { animation-delay:.35s; }
+    .hv-tagline .ln:nth-of-type(2) { animation-delay:.5s; }
+    .hv-tagline .ln:nth-of-type(3) {
+      animation-delay:.65s;
+      font-style:italic;
+      background:none;
+      -webkit-text-fill-color:var(--caramel);
+      color:var(--caramel);
+    }
+
+    @keyframes hvRise { from{opacity:0;transform:translateY(16px)} to{opacity:1;transform:none} }
 
     /* floating stat chips */
     .hv-chip {
@@ -796,6 +850,12 @@
 
     .sticky.show { transform:none; }
 
+    /* keep the right-hand chips fully on screen on smaller laptops */
+    @media(max-width:1240px) {
+      .chip-likes     { right:-2%; }
+      .chip-followers { right:0; bottom:12%; }
+    }
+
     /* SMALL LAPTOP / TABLET: work cards stack, one per row, same size */
 
     @media(max-width:860px) {
@@ -815,7 +875,8 @@
         opacity:.34;
       }
 
-      .hv-chip { display:none; }
+      .hv-chip,
+      .hv-tagline { display:none; }
     }
 
     /* TABLET */
@@ -942,11 +1003,16 @@
 
   <!-- HERO -->
   <section class="hero" aria-labelledby="hero-title">
-    <div class="wrap">
-
-      <!-- HERO MOTION GRAPHIC (decorative) -->
+    <!-- HERO MOTION GRAPHIC (decorative) -->
       <div class="hero-visual" aria-hidden="true">
         <div class="hv-glow"></div>
+
+        <div class="hv-tagline">
+          <span class="kicker">Content that performs</span>
+          <span class="ln">Get seen.</span>
+          <span class="ln">Get liked.</span>
+          <span class="ln">Get booked.</span>
+        </div>
 
         <div class="hv-stage">
 
@@ -984,6 +1050,8 @@
         <div class="hv-chip chip-growth"><span class="ico">&#8599;</span><div><small>Reach</small><b>+248%</b></div></div>
         <div class="hv-chip chip-followers"><span class="ico">&#9733;</span><div><small>New followers</small><b>+1,284</b></div></div>
       </div>
+
+    <div class="wrap">
 
       <p class="eyebrow">Cielo Studios · Belize</p>
 
