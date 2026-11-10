@@ -3,15 +3,51 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Cielo Studios | Marketing, handled.</title>
-  <meta name="description" content="Anything marketing? That's us. Cielo Studios helps businesses get seen through social media, film, ads, websites, SEO, merchandise, print and more.">
+
+  <!-- SEO: title, description, canonical -->
+  <title>Social Media, Meta Ads &amp; Web Design in Belize | Cielo Studios</title>
+  <meta name="description" content="Cielo Studios is a Belize marketing studio: social media management, Meta ads, website design, SEO, film, merch and print for local businesses. Book a free consultation.">
+  <link rel="canonical" href="https://YOURDOMAIN.com/"><!-- REPLACE with your real domain -->
+  <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#1e120a">
+
+  <!-- Open Graph / social sharing (REPLACE domain, and add a ~1200x630 image at images/share.jpg) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Cielo Studios">
+  <meta property="og:title" content="Cielo Studios | Marketing in Belize">
+  <meta property="og:description" content="Social media, Meta ads, websites, SEO, film and print for Belize businesses.">
+  <meta property="og:url" content="https://YOURDOMAIN.com/">
+  <meta property="og:image" content="https://YOURDOMAIN.com/images/share.jpg">
+  <meta name="twitter:card" content="summary_large_image">
 
   <link rel="icon" type="image/png" href="images/logo-camera.png">
   <link rel="apple-touch-icon" href="images/logo-camera.png">
+  <link rel="preload" as="image" href="images/hero.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Structured data. REPLACE: domain, telephone (Belize number), and the sameAs links. Delete any sameAs entry you don't use. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Cielo Studios",
+    "url": "https://YOURDOMAIN.com/",
+    "image": "https://YOURDOMAIN.com/images/logo-camera.png",
+    "email": "cielostudios@outlook.com",
+    "telephone": "+501-XXX-XXXX",
+    "description": "Marketing studio in Belize offering social media management, Meta ads, website design, SEO, film, merchandise and print.",
+    "areaServed": { "@type": "Country", "name": "Belize" },
+    "founder": { "@type": "Person", "name": "Abraham Heavener" },
+    "sameAs": [
+      "YOUR_GOOGLE_BUSINESS_PROFILE_LINK",
+      "YOUR_INSTAGRAM_LINK",
+      "YOUR_FACEBOOK_LINK"
+    ],
+    "knowsAbout": ["Social media management", "Meta ads", "Website design", "SEO", "Video production"]
+  }
+  </script>
 
   <style>
     :root {
@@ -380,6 +416,12 @@
 
     .contact-card .btn { margin-top:auto; }
 
+    .contact-area {
+      margin-top:1.6rem;
+      font-size:.92rem;
+      color:rgba(244,233,219,.7);
+    }
+
     /* ABOUT */
 
     .about {
@@ -545,6 +587,11 @@
       max-height:3.5rem;
     }
 
+    footer .area {
+      flex-basis:100%;
+      font-size:.88rem;
+    }
+
     .sticky {
       position:fixed;
       left:1rem;
@@ -699,8 +746,9 @@
       </h1>
 
       <p class="lede">
-        Social, film, ads, websites, SEO, merch, and print.
-        If your business needs it to get seen, we handle it.
+        Social media management, Meta ads, websites, SEO, film, merch, and print
+        for businesses across Belize. If your business needs it to get seen,
+        we handle it.
       </p>
 
       <div class="actions">
@@ -826,6 +874,12 @@
         </article>
 
       </div>
+
+      <!-- Edit this list to the towns you actually serve -->
+      <p class="contact-area">
+        Serving businesses in Belize City, San Ignacio, Belmopan, Placencia,
+        and across Belize.
+      </p>
     </div>
   </section>
 
@@ -855,10 +909,10 @@
         </h2>
 
         <p>
-          I'm Abraham Heavener, founder and creative director of Cielo Studios.
-          I've always been drawn to building things: solving a problem,
-          putting a plan into motion, or bringing an idea to life through
-          film and design.
+          I'm Abraham Heavener, founder and creative director of Cielo Studios,
+          a Belize marketing studio. I've always been drawn to building things:
+          solving a problem, putting a plan into motion, or bringing an idea
+          to life through film and design.
         </p>
 
         <p>
@@ -894,10 +948,10 @@
 
       <ul>
         <li>
-          <h3>Social Media Creation &amp; Management</h3>
+          <h3>Social Media Management in Belize</h3>
           <p>
             Content created and managed for you, from planning and posting
-            to community engagement and growth.
+            to community engagement and growth, for Belize businesses.
           </p>
         </li>
 
@@ -910,15 +964,15 @@
         </li>
 
         <li>
-          <h3>Paid Advertising</h3>
+          <h3>Meta Ads (Facebook &amp; Instagram) and Google Ads</h3>
           <p>
             Meta and Google campaigns built, tested, and optimized
-            to put your business in front of the right customers.
+            to put your Belize business in front of the right customers.
           </p>
         </li>
 
         <li>
-          <h3>Website Design &amp; Development</h3>
+          <h3>Website Design in Belize</h3>
           <p>
             Fast, beautiful websites designed to turn visitors
             into customers.
@@ -926,10 +980,10 @@
         </li>
 
         <li>
-          <h3>SEO (Search Engine Optimization)</h3>
+          <h3>SEO for Belize Businesses</h3>
           <p>
             Search strategy and optimization that helps the right
-            people find you on Google.
+            people in Belize find you on Google.
           </p>
         </li>
 
@@ -960,6 +1014,15 @@
       <h2 id="faq-title" class="display section-heading">
         Common questions.
       </h2>
+
+      <details>
+        <summary>Do you work with businesses across Belize?</summary>
+        <p>
+          Yes. We're a Belize-based studio and work with businesses
+          throughout the country, in person where we can and online
+          anywhere in Belize.
+        </p>
+      </details>
 
       <details>
         <summary>Can I start with just one service?</summary>
@@ -1005,6 +1068,11 @@
   <div class="wrap">
     <img class="brand-logo" src="images/logo-camera.png" alt="Cielo Studios">
     <p>© <span id="year"></span> Cielo Studios. All rights reserved.</p>
+    <p class="area">
+      Cielo Studios · Social media, Meta ads, web design, and SEO in Belize, Central America.
+      <!-- Add your Google Business Profile link here:
+      · <a href="YOUR_GOOGLE_BUSINESS_PROFILE_LINK" target="_blank" rel="noopener">Find us on Google</a> -->
+    </p>
   </div>
 </footer>
 
